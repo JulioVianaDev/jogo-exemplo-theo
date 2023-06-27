@@ -4022,6 +4022,178 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Dark/light"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BBText::IsBBText"
+                  },
+                  "parameters": [
+                    "NameTxt",
+                    "!=",
+                    "\"[b][color=#433699]Player[/color][/b]\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectColorHSLTween"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Tween",
+                    "\"Darken\"",
+                    "",
+                    "",
+                    "-1",
+                    "30",
+                    "\"linear\"",
+                    "250",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BBText::IsBBText"
+                  },
+                  "parameters": [
+                    "NameTxt",
+                    "=",
+                    "\"[b][color=#433699]Player[/color][/b]\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectColorHSLTween"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Tween",
+                    "\"Lighten\"",
+                    "",
+                    "",
+                    "-1",
+                    "100",
+                    "\"linear\"",
+                    "250",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BBText::IsBBText"
+                  },
+                  "parameters": [
+                    "NameTxt",
+                    "=",
+                    "\"[b][color=#433699]Banqueiro[/color][/b]\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectColorHSLTween"
+                  },
+                  "parameters": [
+                    "Banqueiro",
+                    "Tween",
+                    "\"Lighten\"",
+                    "",
+                    "",
+                    "-1",
+                    "100",
+                    "\"linear\"",
+                    "250",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BBText::IsBBText"
+                  },
+                  "parameters": [
+                    "NameTxt",
+                    "!=",
+                    "\"[b][color=#433699]Banqueiro[/color][/b]\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Tween::AddObjectColorHSLTween"
+                  },
+                  "parameters": [
+                    "Banqueiro",
+                    "Tween",
+                    "\"Darken\"",
+                    "",
+                    "",
+                    "-1",
+                    "30",
+                    "\"linear\"",
+                    "250",
+                    ""
+                  ]
+                }
+              ]
             }
           ],
           "parameters": []
