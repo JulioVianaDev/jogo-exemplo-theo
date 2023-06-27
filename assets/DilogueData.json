@@ -2,30 +2,30 @@
 	{
 		"title": "Begin",
 		"tags": "",
-		"body": "[i]Primeira frase[/i]\n[i]Segunda frase[/i]\n[i]Terceira frase[/i]\n[[ I choose Option 1 |choice1]] \n[[ I choose Option 2 |choice2]]",
+		"body": "<< Player >> \nOi tudo bem?\n<< Banqueiro >> \nTudo como vai você?\n<< Player >> \nEu estou indo para Casa\n<< Banqueiro >> \nBoa viagem\n[[ Vou agora|Now]] \n[[ Vou depois |Tomorrow]]",
 		"position": {
 			"x": 284,
 			"y": 117
 		},
-		"colorID": 0
+		"colorID": 1
 	},
 	{
-		"title": "choice1",
+		"title": "Now",
 		"tags": "",
-		"body": "Placeholder Text1",
+		"body": "<< Player >> \nOpa Beleza.\n<< BanqueiroFeliz >> \nIsso é incrivel",
 		"position": {
-			"x": 324,
-			"y": -160
+			"x": 286,
+			"y": -214
 		},
 		"colorID": 0
 	},
 	{
-		"title": "choice2",
+		"title": "Tomorrow",
 		"tags": "",
-		"body": "Placeholder Text2",
+		"body": "<< Player >> \nPuxa vida.\n<< Banqueiro >> \nOkay te vejo depois",
 		"position": {
-			"x": 623,
-			"y": -103
+			"x": 605,
+			"y": -161
 		},
 		"colorID": 0
 	}
