@@ -701,6 +701,12 @@
       "name": "Derrotados",
       "type": "number",
       "value": 0
+    },
+    {
+      "folded": true,
+      "name": "Coins",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -1543,11 +1549,11 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 92,
+          "height": 111,
           "layer": "",
           "name": "Monstro3",
           "persistentUuid": "f4d636fc-e343-4313-95e2-d1115c2adcff",
-          "width": 102,
+          "width": 94,
           "x": 684,
           "y": 777,
           "zOrder": 5,
@@ -1575,11 +1581,11 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 97,
+          "height": 124,
           "layer": "",
           "name": "Monstro4",
           "persistentUuid": "e9095eca-7490-4686-8830-370e464f395c",
-          "width": 112,
+          "width": 109,
           "x": 466,
           "y": 858,
           "zOrder": 7,
@@ -1993,6 +1999,12 @@
               "name": "Vida",
               "type": "number",
               "value": 250
+            },
+            {
+              "folded": true,
+              "name": "Value",
+              "type": "number",
+              "value": 50
             }
           ],
           "effects": [],
@@ -2188,7 +2200,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "SpawnMonster",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2306,7 +2317,6 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Fight",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
@@ -2401,15 +2411,6 @@
                 },
                 {
                   "type": {
-                    "value": "Delete"
-                  },
-                  "parameters": [
-                    "MonstrosGroup",
-                    ""
-                  ]
-                },
-                {
-                  "type": {
                     "value": "GlobalVariablePushString"
                   },
                   "parameters": [
@@ -2424,6 +2425,24 @@
                   "parameters": [
                     "Derrotados",
                     "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "GlobalVariablePushNumber"
+                  },
+                  "parameters": [
+                    "Coins",
+                    "MonstrosGroup.Variable(Value)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Delete"
+                  },
+                  "parameters": [
+                    "MonstrosGroup",
+                    ""
                   ]
                 },
                 {
@@ -2448,7 +2467,7 @@
                   "parameters": [
                     "NewText",
                     "=",
-                    "ToString(GlobalVariableChildCount(TiposMonstrosDerrotados))"
+                    "ToString(GlobalVariable(Coins))"
                   ]
                 }
               ]
@@ -2605,6 +2624,31 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "b"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "PushScene"
+              },
+              "parameters": [
+                "",
+                "\"City\""
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -2670,8 +2714,16 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "DialogBoxBackGround",
+          "type": "DialogBox::DialogBoxBackGround"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     },
@@ -2685,12 +2737,80 @@
       "stopSoundsOnStartup": true,
       "title": "",
       "v": 209,
-      "uiSettings": {},
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false
+      },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
-      "objects": [],
-      "events": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "NewText",
+          "persistentUuid": "6b829eb7-5ca5-437b-a021-5e403a9c4d9c",
+          "width": 0,
+          "x": 391,
+          "y": 325,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "NewText",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 48,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "NewText",
+                "=",
+                "ToString(GlobalVariable(Coins))"
+              ]
+            }
+          ]
+        }
+      ],
       "layers": [
         {
           "ambientLightColorB": 200,
@@ -2722,8 +2842,16 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "DialogBoxBackGround",
+          "type": "DialogBox::DialogBoxBackGround"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
         }
       ]
     },
@@ -2799,7 +2927,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5117784035210173,
+        "zoomFactor": 0.41943397827590595,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -3306,7 +3434,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4057518905943824,
+        "zoomFactor": 0.4335774304702372,
         "windowMask": false
       },
       "objectsGroups": [],
