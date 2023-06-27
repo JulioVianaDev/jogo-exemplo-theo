@@ -2,10 +2,30 @@
 	{
 		"title": "Begin",
 		"tags": "",
-		"body": "[i]Primeira frase[/i]\n[i]Segunda frase[/i]\n[i]Terceira frase[/i]",
+		"body": "[i]Primeira frase[/i]\n[i]Segunda frase[/i]\n[i]Terceira frase[/i]\n[[ I choose Option 1 |choice1]] \n[[ I choose Option 2 |choice2]]",
 		"position": {
-			"x": 457,
-			"y": 240
+			"x": 284,
+			"y": 117
+		},
+		"colorID": 0
+	},
+	{
+		"title": "choice1",
+		"tags": "",
+		"body": "Placeholder Text1",
+		"position": {
+			"x": 324,
+			"y": -160
+		},
+		"colorID": 0
+	},
+	{
+		"title": "choice2",
+		"tags": "",
+		"body": "Placeholder Text2",
+		"position": {
+			"x": 623,
+			"y": -103
 		},
 		"colorID": 0
 	}

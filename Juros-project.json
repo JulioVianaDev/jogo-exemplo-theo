@@ -455,8 +455,26 @@
         "disablePreload": false,
         "file": "assets/DilogueData.json",
         "kind": "json",
-        "metadata": "{\"extension\":\".json\"}",
+        "metadata": "{\"extension\":\".json\",\"localFilePath\":\"assets/DilogueData.json\"}",
         "name": "DilogueData",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "banqueiro2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "banqueiro2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/feliz.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "feliz",
+        "smoothed": false,
         "userAdded": true
       }
     ],
@@ -576,7 +594,7 @@
       ],
       "animations": [
         {
-          "name": "banqueiro",
+          "name": "normal",
           "useMultipleDirections": false,
           "directions": [
             {
@@ -587,6 +605,36 @@
                 {
                   "hasCustomCollisionMask": false,
                   "image": "banqueiro",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "feliz",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{}}",
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "feliz",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -3349,6 +3397,38 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 175,
+          "layer": "Options UI",
+          "name": "Options",
+          "persistentUuid": "c83519cb-fb07-4759-bbb8-54914a1a0690",
+          "width": 418,
+          "x": 479,
+          "y": 134,
+          "zOrder": 7,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 124,
+          "layer": "Options UI",
+          "name": "OptionsText",
+          "persistentUuid": "a40b4289-52ed-428f-8a29-d8f7d3fb5e58",
+          "width": 368,
+          "x": 492,
+          "y": 158,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
@@ -3662,6 +3742,144 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "DialogueTree::IsDialogueLineType"
+              },
+              "parameters": [
+                "\"options\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "HideLayer"
+              },
+              "parameters": [
+                "",
+                "\"Options UI\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DialogueTree::IsDialogueLineType"
+              },
+              "parameters": [
+                "\"options\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ShowLayer"
+              },
+              "parameters": [
+                "",
+                "\"Options UI\""
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsMouseWheelScrollingUp"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::SelectPreviousOption"
+                  },
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "IsMouseWheelScrollingDown"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::SelectNextOption"
+                  },
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonReleased"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::ConfirmSelectOption"
+                  },
+                  "parameters": []
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DialogueTree::HasSelectedOptionChanged"
+                  },
+                  "parameters": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "OptionsText",
+                    "=",
+                    "DialogueTree::VerticalOptionsList(\"[b][color=yellow]>[/b][/color]\")"
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -3690,6 +3908,22 @@
               "width": 0
             }
           ],
+          "effects": []
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 0.1,
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Options UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
           "effects": []
         }
       ],
