@@ -529,6 +529,28 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/Menu buttons/efae8667310d19ec644147356eb91a417f9558f93f4ea3648611fe5a79fb0f3a_Red Button With Gold Frame_Hovered.png",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Gold Coin.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin.png",
+        "smoothed": false,
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/16x16 Pixel art RPG Items/Collectable items/5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin.png",
+          "name": "gdevelop-asset-store"
+        }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\"}",
+        "name": "5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -791,6 +813,12 @@
     {
       "folded": true,
       "name": "Coins",
+      "type": "number",
+      "value": 50
+    },
+    {
+      "folded": true,
+      "name": "Poupanca",
       "type": "number",
       "value": 0
     }
@@ -3044,8 +3072,8 @@
           "name": "Player",
           "persistentUuid": "968a83f2-af29-4b3d-b10f-842d5c30a4f9",
           "width": 44,
-          "x": 95,
-          "y": 65,
+          "x": 211,
+          "y": 405,
           "zOrder": 1,
           "numberProperties": [],
           "stringProperties": [],
@@ -3095,6 +3123,22 @@
           "x": 1008,
           "y": 510,
           "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 86,
+          "layer": "",
+          "name": "Moeda",
+          "persistentUuid": "3d835fa1-ccac-4bec-baff-1deaa4e0f29b",
+          "width": 88,
+          "x": 351,
+          "y": 294,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3239,6 +3283,48 @@
               ]
             }
           ]
+        },
+        {
+          "assetStoreId": "",
+          "name": "Moeda",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "metadata": "{\"pskl\":{}}",
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -3295,6 +3381,44 @@
               "parameters": [
                 "",
                 "\"PigPoupanca\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "CollisionNP"
+              },
+              "parameters": [
+                "Player",
+                "Moeda",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Coins",
+                "+",
+                "20"
+              ]
+            },
+            {
+              "type": {
+                "value": "Delete"
+              },
+              "parameters": [
+                "Moeda",
                 ""
               ]
             }
@@ -4509,11 +4633,18 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.35534345588169836,
+        "zoomFactor": 0.3797121001947931,
         "windowMask": false
       },
       "objectsGroups": [],
-      "variables": [],
+      "variables": [
+        {
+          "folded": true,
+          "name": "ValorDigitado",
+          "type": "number",
+          "value": 0
+        }
+      ],
       "instances": [
         {
           "angle": 0,
@@ -4715,8 +4846,8 @@
           "name": "Painel",
           "persistentUuid": "fce29e6f-0970-4048-abd5-22d5bd8b5c40",
           "width": 1257,
-          "x": 5,
-          "y": -5,
+          "x": 10,
+          "y": 1,
           "zOrder": 13,
           "numberProperties": [],
           "stringProperties": [],
@@ -4744,7 +4875,7 @@
           "depth": 0,
           "height": 81,
           "layer": "Modal",
-          "name": "Coins",
+          "name": "CoinsInput",
           "persistentUuid": "65fab5fd-9b56-44d5-a365-b47a46a7942f",
           "width": 492,
           "x": 358,
@@ -4758,29 +4889,13 @@
           "angle": 0,
           "customSize": true,
           "depth": 0,
-          "height": 159,
-          "layer": "Modal",
-          "name": "Info",
-          "persistentUuid": "5513d59c-9aa6-4e0e-9360-8fb057e38377",
-          "width": 829,
-          "x": 166,
-          "y": 79,
-          "zOrder": 21,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 0,
           "height": 226,
           "layer": "Modal",
           "name": "CoinsValue",
           "persistentUuid": "8ded994a-6803-4a19-8213-ca6f504c9c70",
           "width": 979,
-          "x": 89,
-          "y": 60,
+          "x": 86,
+          "y": 37,
           "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
@@ -4828,6 +4943,53 @@
           "x": 1130,
           "y": 82,
           "zOrder": 25,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 135,
+          "layer": "Modal",
+          "name": "InfoComprar",
+          "persistentUuid": "5a25c066-030a-4b19-9e4f-f13ce1cbef67",
+          "width": 726,
+          "x": 278,
+          "y": 108,
+          "zOrder": 26,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 0,
+          "height": 83,
+          "layer": "Modal",
+          "name": "NewTextInput",
+          "persistentUuid": "1dbf0a69-d822-4b5c-a16d-5e508a04cf8d",
+          "width": 492,
+          "x": 475,
+          "y": 333,
+          "zOrder": 27,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "Modal",
+          "name": "aaaaaaaaa",
+          "persistentUuid": "71019aff-b310-45a8-8ed6-50d80fe734d3",
+          "width": 0,
+          "x": 230,
+          "y": 344,
+          "zOrder": 28,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -4957,6 +5119,25 @@
         {
           "assetStoreId": "",
           "name": "Info",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "text": "Para cada minuto jogado o seu valor investido rende 1%",
+            "opacity": 255,
+            "fontSize": 48,
+            "visible": true,
+            "color": "243;236;236",
+            "fontFamily": "Arial",
+            "align": "left",
+            "wordWrap": true
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "InfoComprar",
           "tags": "",
           "type": "BBText::BBText",
           "variables": [],
@@ -5205,26 +5386,55 @@
         },
         {
           "assetStoreId": "",
-          "name": "Coins",
+          "name": "NewTextInput",
           "tags": "",
           "type": "TextInput::TextInputObject",
           "variables": [],
           "effects": [],
           "behaviors": [],
           "content": {
-            "initialValue": "0",
-            "placeholder": "Digite o quanto quer investir",
+            "initialValue": "Nenhum Valor Inserido",
+            "placeholder": "Touch to start typing",
             "fontResourceName": "",
-            "fontSize": 48,
-            "inputType": "number",
+            "fontSize": 20,
+            "inputType": "text",
             "textColor": "0;0;0",
             "fillColor": "255;255;255",
             "fillOpacity": 255,
             "borderColor": "0;0;0",
             "borderOpacity": 255,
-            "borderWidth": 2,
+            "borderWidth": 1,
             "readOnly": false,
             "disabled": false
+          }
+        },
+        {
+          "assetStoreId": "",
+          "bold": false,
+          "italic": false,
+          "name": "aaaaaaaaa",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [
+            {
+              "folded": true,
+              "name": "digitado",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "string": "Text",
+          "font": "",
+          "textAlignment": "left",
+          "characterSize": 40,
+          "color": {
+            "b": 255,
+            "g": 255,
+            "r": 255
           }
         }
       ],
@@ -5333,6 +5543,56 @@
                 "value": "SourisSurObjet"
               },
               "parameters": [
+                "ButtonComprarOficial",
+                "",
+                "",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "MouseButtonFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Left\""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "Coins",
+                "-",
+                "ToNumber(NewTextInput.Text())"
+              ]
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "SourisSurObjet"
+              },
+              "parameters": [
                 "ButtonVoltar",
                 "",
                 "",
@@ -5395,7 +5655,45 @@
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "CoinsTotal",
+                "=",
+                "ToString(GlobalVariable(Coins))"
+              ]
+            },
+            {
+              "type": {
+                "value": "TextObject::String"
+              },
+              "parameters": [
+                "aaaaaaaaa",
+                "=",
+                "aaaaaaaaa.VariableString(digitado)"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "ModVarObjet"
+              },
+              "parameters": [
+                "aaaaaaaaa",
+                "digitado",
+                "=",
+                "ToNumber(NewTextInput.Text())"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
@@ -5560,6 +5858,24 @@
           "actions": []
         }
       ]
+    },
+    {
+      "associatedLayout": "PigPoupanca",
+      "lastChangeTimeStamp": 0,
+      "name": "GlobalEvents",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": []
+        }
+      ]
+    },
+    {
+      "associatedLayout": "",
+      "lastChangeTimeStamp": 0,
+      "name": "Poupanca",
+      "events": []
     }
   ],
   "eventsFunctionsExtensions": [
