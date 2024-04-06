@@ -551,15 +551,24 @@
         "name": "5344a18114b8923e086ed815c87b6790693e4df78490071c1b120ffc6c00fea9_Gold Coin",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "tomato.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "tomato.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
   },
   "objects": [
     {
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "Player",
-      "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -646,9 +655,9 @@
       ]
     },
     {
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "Banqueiro",
-      "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -731,9 +740,9 @@
       ]
     },
     {
+      "adaptCollisionMaskAutomatically": false,
       "assetStoreId": "",
       "name": "Pig",
-      "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
@@ -773,6 +782,20 @@
       ]
     }
   ],
+  "objectsFolderStructure": {
+    "folderName": "__ROOT",
+    "children": [
+      {
+        "objectName": "Player"
+      },
+      {
+        "objectName": "Banqueiro"
+      },
+      {
+        "objectName": "Pig"
+      }
+    ]
+  },
   "objectsGroups": [],
   "variables": [
     {
@@ -1091,9 +1114,9 @@
       ],
       "objects": [
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "bank",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1133,9 +1156,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Mercador",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1174,9 +1197,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "DoorGate",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1227,9 +1250,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "DoorContent",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1283,7 +1306,6 @@
           "assetStoreId": "",
           "height": 32,
           "name": "Floor",
-          "tags": "",
           "texture": "chao2.png3",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 32,
@@ -1292,9 +1314,9 @@
           "behaviors": []
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "colisores",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1341,6 +1363,29 @@
           ]
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "bank"
+          },
+          {
+            "objectName": "Mercador"
+          },
+          {
+            "objectName": "DoorGate"
+          },
+          {
+            "objectName": "DoorContent"
+          },
+          {
+            "objectName": "Floor"
+          },
+          {
+            "objectName": "colisores"
+          }
+        ]
+      },
       "events": [
         {
           "type": "BuiltinCommonInstructions::Link",
@@ -1470,6 +1515,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -1497,6 +1543,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -1513,6 +1560,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -1525,8 +1573,24 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
+        },
+        {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
         },
         {
           "name": "Pathfinding",
@@ -1535,6 +1599,14 @@
         {
           "name": "PathfindingObstacle",
           "type": "PathfindingBehavior::PathfindingObstacleBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "ThreeDFlip",
@@ -1749,9 +1821,9 @@
       ],
       "objects": [
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "dungeonBackground",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -1827,9 +1899,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "portal",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -1868,9 +1940,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Monstro1",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -1923,9 +1995,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Monstro2",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -1978,9 +2050,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Monstro3",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -2033,9 +2105,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Monstro4",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -2093,7 +2165,6 @@
           "italic": false,
           "name": "NewText",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
@@ -2107,12 +2178,32 @@
             "b": 0,
             "g": 0,
             "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Textaaaa",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 50,
+            "color": "0;0;0"
           }
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "BossP1",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [
@@ -2165,6 +2256,35 @@
           ]
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "dungeonBackground"
+          },
+          {
+            "objectName": "portal"
+          },
+          {
+            "objectName": "Monstro1"
+          },
+          {
+            "objectName": "Monstro2"
+          },
+          {
+            "objectName": "Monstro3"
+          },
+          {
+            "objectName": "Monstro4"
+          },
+          {
+            "objectName": "NewText"
+          },
+          {
+            "objectName": "BossP1"
+          }
+        ]
+      },
       "events": [
         {
           "colorB": 228,
@@ -2781,6 +2901,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -2808,6 +2929,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -2824,6 +2946,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -2836,12 +2959,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -2898,7 +3045,6 @@
           "italic": false,
           "name": "NewText",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
@@ -2912,9 +3058,37 @@
             "b": 0,
             "g": 0,
             "r": 0
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 48,
+            "color": "0;0;0"
           }
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "NewText"
+          }
+        ]
+      },
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -2941,6 +3115,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -2964,12 +3139,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -2987,11 +3186,108 @@
       "stopSoundsOnStartup": true,
       "title": "",
       "v": 209,
-      "uiSettings": {},
+      "uiSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.546875,
+        "windowMask": false
+      },
       "objectsGroups": [],
       "variables": [],
-      "instances": [],
-      "objects": [],
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "TOMATAOOOOOOOOOO",
+          "persistentUuid": "a9fefa66-0456-4e57-8142-a42f2115d002",
+          "width": 0,
+          "x": 390,
+          "y": 122,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "objects": [
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "TOMATAOOOOOOOOOO",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "tomato.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 26,
+                            "y": 0
+                          },
+                          {
+                            "x": 486,
+                            "y": 0
+                          },
+                          {
+                            "x": 486,
+                            "y": 512
+                          },
+                          {
+                            "x": 26,
+                            "y": 512
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "TOMATAOOOOOOOOOO"
+          }
+        ]
+      },
       "events": [],
       "layers": [
         {
@@ -3001,6 +3297,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3024,12 +3321,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -3146,9 +3467,9 @@
       ],
       "objects": [
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Banqueiro",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3201,9 +3522,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "CreditCard",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3243,9 +3564,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "celphone",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3285,9 +3606,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Moeda",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3327,6 +3648,23 @@
           ]
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Banqueiro"
+          },
+          {
+            "objectName": "CreditCard"
+          },
+          {
+            "objectName": "celphone"
+          },
+          {
+            "objectName": "Moeda"
+          }
+        ]
+      },
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -3440,6 +3778,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3467,6 +3806,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3483,6 +3823,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3495,12 +3836,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -3523,6 +3888,9 @@
       "variables": [],
       "instances": [],
       "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
       "events": [],
       "layers": [
         {
@@ -3532,6 +3900,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3555,12 +3924,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -3595,6 +3988,9 @@
       "variables": [],
       "instances": [],
       "objects": [],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT"
+      },
       "events": [],
       "layers": [
         {
@@ -3604,6 +4000,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -3627,12 +4024,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -3796,9 +4217,9 @@
       ],
       "objects": [
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "DialogueBox",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3837,9 +4258,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "NamesBox",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -3881,7 +4302,6 @@
           "assetStoreId": "",
           "height": 40,
           "name": "Options",
-          "tags": "",
           "texture": "option_box.png",
           "type": "TiledSpriteObject::TiledSprite",
           "width": 40,
@@ -3892,7 +4312,6 @@
         {
           "assetStoreId": "",
           "name": "NameTxt",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -3911,7 +4330,6 @@
         {
           "assetStoreId": "",
           "name": "DialogueText",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -3930,7 +4348,6 @@
         {
           "assetStoreId": "",
           "name": "OptionsText",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -3947,6 +4364,29 @@
           }
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "DialogueBox"
+          },
+          {
+            "objectName": "NamesBox"
+          },
+          {
+            "objectName": "Options"
+          },
+          {
+            "objectName": "NameTxt"
+          },
+          {
+            "objectName": "DialogueText"
+          },
+          {
+            "objectName": "OptionsText"
+          }
+        ]
+      },
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -4561,6 +5001,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -4588,6 +5029,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -4600,12 +5042,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -4997,9 +5463,9 @@
       ],
       "objects": [
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "Painel",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5038,9 +5504,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "CoinsValue",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5081,7 +5547,6 @@
         {
           "assetStoreId": "",
           "name": "CoinsTotal",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -5100,7 +5565,6 @@
         {
           "assetStoreId": "",
           "name": "Lucro",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -5119,7 +5583,6 @@
         {
           "assetStoreId": "",
           "name": "Info",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -5138,7 +5601,6 @@
         {
           "assetStoreId": "",
           "name": "InfoComprar",
-          "tags": "",
           "type": "BBText::BBText",
           "variables": [],
           "effects": [],
@@ -5155,9 +5617,9 @@
           }
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "ButtonComprar",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5196,9 +5658,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "ButtonComprarOficial",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5242,7 +5704,6 @@
           "italic": false,
           "name": "Comprar",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
@@ -5256,12 +5717,32 @@
             "b": 255,
             "g": 255,
             "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Comprar",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 48,
+            "color": "255;255;255"
           }
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "ButtonVoltar",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5300,9 +5781,9 @@
           ]
         },
         {
+          "adaptCollisionMaskAutomatically": false,
           "assetStoreId": "",
           "name": "ButtonSkip",
-          "tags": "",
           "type": "Sprite",
           "updateIfNotVisible": false,
           "variables": [],
@@ -5346,7 +5827,6 @@
           "italic": false,
           "name": "Voltar",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
@@ -5360,6 +5840,26 @@
             "b": 255,
             "g": 255,
             "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Voltar",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 48,
+            "color": "255;255;255"
           }
         },
         {
@@ -5368,7 +5868,6 @@
           "italic": false,
           "name": "CloseModal",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [],
@@ -5382,12 +5881,31 @@
             "b": 255,
             "g": 255,
             "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "x",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 48,
+            "color": "255;255;255"
           }
         },
         {
           "assetStoreId": "",
           "name": "NewTextInput",
-          "tags": "",
           "type": "TextInput::TextInputObject",
           "variables": [],
           "effects": [],
@@ -5414,7 +5932,6 @@
           "italic": false,
           "name": "aaaaaaaaa",
           "smoothed": true,
-          "tags": "",
           "type": "TextObject::Text",
           "underlined": false,
           "variables": [
@@ -5435,9 +5952,79 @@
             "b": 255,
             "g": 255,
             "r": 255
+          },
+          "content": {
+            "bold": false,
+            "isOutlineEnabled": false,
+            "isShadowEnabled": false,
+            "italic": false,
+            "outlineColor": "255;255;255",
+            "outlineThickness": 2,
+            "shadowAngle": 90,
+            "shadowBlurRadius": 2,
+            "shadowColor": "0;0;0",
+            "shadowDistance": 4,
+            "shadowOpacity": 127,
+            "smoothed": true,
+            "underlined": false,
+            "text": "Text",
+            "font": "",
+            "textAlignment": "left",
+            "characterSize": 40,
+            "color": "255;255;255"
           }
         }
       ],
+      "objectsFolderStructure": {
+        "folderName": "__ROOT",
+        "children": [
+          {
+            "objectName": "Painel"
+          },
+          {
+            "objectName": "CoinsValue"
+          },
+          {
+            "objectName": "CoinsTotal"
+          },
+          {
+            "objectName": "Lucro"
+          },
+          {
+            "objectName": "Info"
+          },
+          {
+            "objectName": "InfoComprar"
+          },
+          {
+            "objectName": "ButtonComprar"
+          },
+          {
+            "objectName": "ButtonComprarOficial"
+          },
+          {
+            "objectName": "Comprar"
+          },
+          {
+            "objectName": "ButtonVoltar"
+          },
+          {
+            "objectName": "ButtonSkip"
+          },
+          {
+            "objectName": "Voltar"
+          },
+          {
+            "objectName": "CloseModal"
+          },
+          {
+            "objectName": "NewTextInput"
+          },
+          {
+            "objectName": "aaaaaaaaa"
+          }
+        ]
+      },
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -5704,6 +6291,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -5731,6 +6319,7 @@
           "camera3DFarPlaneDistance": 10000,
           "camera3DFieldOfView": 45,
           "camera3DNearPlaneDistance": 0.1,
+          "cameraType": "perspective",
           "followBaseLayerCamera": false,
           "isLightingLayer": false,
           "isLocked": false,
@@ -5743,12 +6332,36 @@
       ],
       "behaviorsSharedData": [
         {
+          "name": "Animation",
+          "type": "AnimatableCapability::AnimatableBehavior"
+        },
+        {
           "name": "DialogBoxBackGround",
           "type": "DialogBox::DialogBoxBackGround"
         },
         {
+          "name": "Effect",
+          "type": "EffectCapability::EffectBehavior"
+        },
+        {
+          "name": "Flippable",
+          "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Opacity",
+          "type": "OpacityCapability::OpacityBehavior"
+        },
+        {
           "name": "Pathfinding",
           "type": "PathfindingBehavior::PathfindingBehavior"
+        },
+        {
+          "name": "Resizable",
+          "type": "ResizableCapability::ResizableBehavior"
+        },
+        {
+          "name": "Scale",
+          "type": "ScalableCapability::ScalableBehavior"
         },
         {
           "name": "Tween",
@@ -6758,7 +7371,6 @@
               "description": "",
               "group": "",
               "extraInformation": [],
-              "hidden": false,
               "name": "Interval"
             },
             {
@@ -6768,7 +7380,6 @@
               "description": "",
               "group": "",
               "extraInformation": [],
-              "hidden": false,
               "name": "Se"
             },
             {
@@ -6790,7 +7401,6 @@
               "description": "",
               "group": "",
               "extraInformation": [],
-              "hidden": false,
               "name": "Duration"
             }
           ],
