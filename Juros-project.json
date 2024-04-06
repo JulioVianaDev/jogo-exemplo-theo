@@ -560,6 +560,15 @@
         "name": "tomato.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "luffy.jpg",
+        "kind": "image",
+        "metadata": "",
+        "name": "luffy.jpg",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -3204,15 +3213,47 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 205,
           "layer": "",
           "name": "TOMATAOOOOOOOOOO",
           "persistentUuid": "a9fefa66-0456-4e57-8142-a42f2115d002",
-          "width": 0,
-          "x": 390,
-          "y": 122,
+          "width": 211,
+          "x": 113,
+          "y": 523,
           "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "name": "Pig",
+          "persistentUuid": "f1bf8915-ba4a-442c-9710-e5724e0dfa57",
+          "width": 0,
+          "x": 906,
+          "y": 206,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 749,
+          "layer": "",
+          "name": "NewSprite",
+          "persistentUuid": "550a0517-4bfc-4ad5-a0a6-bcf7c7b1284f",
+          "width": 1293,
+          "x": -8,
+          "y": -8,
+          "zOrder": 0,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -3278,6 +3319,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "NewSprite",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "luffy.jpg",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 860,
+                            "y": 0
+                          },
+                          {
+                            "x": 860,
+                            "y": 430
+                          },
+                          {
+                            "x": 0,
+                            "y": 430
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -3285,6 +3386,9 @@
         "children": [
           {
             "objectName": "TOMATAOOOOOOOOOO"
+          },
+          {
+            "objectName": "NewSprite"
           }
         ]
       },
